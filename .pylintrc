@@ -1,0 +1,4 @@
+[MESSAGES CONTROL]
+# Lines being too long will be picked up by black if they are possible to
+# reduce. `torch` has `no-member`s due to the way the library is structured.
+disable=line-too-long,no-member

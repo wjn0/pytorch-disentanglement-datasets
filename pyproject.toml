@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["disentanglement_datasets"]
+
+[project]
+name = "pytorch-disentanglement-datasets"
+version = "0.0.1"
+authors = [
+  { name="Walter Nelson", email="walterj.nelson@mail.utoronto.ca" },
+]
+description = "PyTorch datasets with a focus on disentanglement"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+    "torch",
+    "torchvision"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/wjn0/pytorch-disentanglement-datasets"
+"Bug Tracker" = "https://github.com/wjn0/pytorch-disentanglement-datasets/issues"

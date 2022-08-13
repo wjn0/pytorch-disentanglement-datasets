@@ -1,0 +1,28 @@
+name: Test suite
+on: push
+
+jobs:
+    pytest:
+        runs-on: ubuntu-latest
+        container: python:3.7.6-slim
+        steps:
+            - name: Check out server repository
+              uses: actions/checkout@v3
+
+            - name: Install builddeps
+              run: python3 -m pip install build pylint black
+
+            - name: Build package
+              run: python3 -m build
+
+            - name: Install package
+              run: python3 -m pip install dist/*.whl
+
+            - name: Pylint
+              run: python3 -m pylint disentanglement_datasets/
+
+            - name: Black
+              run: python3 -m black --check disentanglement_datasets/
+
+            - name: Run test suite
+              run: PYTHONPATH=. python3 -m unittest test
